@@ -1,0 +1,19 @@
+{
+    "name": "Risefall",
+    "version": "1.1",
+    "description": "An app that keeps track of your energy cycle.",
+    "icons": { "16": "icon_16.png", "48": "icon_48.png", "128": "icon_128.png" },
+    "permissions": [
+        "notifications",
+        "webview"
+    ],
+
+    "app": {
+        "background": {
+            "scripts": ["main.js"]
+        }
+
+    },
+
+    "manifest_version": 2
+}
