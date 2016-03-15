@@ -19,7 +19,7 @@ function startTimer() {
     time = new Date();
     console.log(time.getHours());
     console.log(time.getMinutes());
-    if (7 < time.getHours() < 19 && time.getMinutes() == 59) {
+    if ( 8< time.getHours() < 20 && time.getMinutes() == 0) {
         // if (time.getMilliseconds() == 59 {
             clearInterval(timer);
             launch();
@@ -44,6 +44,8 @@ function launch() {
 }
 
 function notify() {
+    time = new Date();
+
     var timeStr = time.getFullYear() + "-" + (time.getMonth() + 1) +
     "-" + time.getDate() + " " + time.getHours() + ":" +
     time.getMinutes();
@@ -58,7 +60,7 @@ function notify() {
 
 }
 
-function setNotificationListener(){
+function setNotificationListener() {
     chrome.notifications.onClicked.addListener(function() {
         open();
     });
@@ -78,13 +80,13 @@ function creationCallback(id) {
 
 function open() {
 
-   chrome.windows.create({
-    'url': getSheetUrl(),
-    'width': windowWidth,
-    'height': windowHeight,
-    'left': Math.round(screen.availWidth / 2 - windowWidth / 2),
-    'top': Math.round(screen.availHeight / 2 - windowHeight / 2)
-});
+    chrome.windows.create({
+        'url': getSheetUrl(),
+        'width': windowWidth,
+        'height': windowHeight,
+        'left': Math.round(screen.availWidth / 2 - windowWidth / 2),
+        'top': Math.round(screen.availHeight / 2 - windowHeight / 2)
+    });
 
     // chrome.windows.get(windowID, function(chromeWindow) {
     //     if (!chrome.runtime.lastError && chromeWindow) {
@@ -106,6 +108,6 @@ function open() {
 
 }
 
-function getSheetUrl(){
+function getSheetUrl() {
     return "https://docs.google.com/spreadsheets/d/1GE--PHt2vNHuqK9hy_1voocdjrhH9X4cEeGwePPIhGE/edit#gid=0";
 }
