@@ -50,13 +50,13 @@ function notify() {
     "-" + time.getDate() + " " + time.getHours() + ":" +
     time.getMinutes();
 
-    // chrome.notifications.create("id" + id++, {
-    //     type: "basic",
-    //     title: timeStr,
-    //     message: "Time to add energy cycle.",
-    //     iconUrl: "icon_128.png"
-    // }, creationCallback);
-    open();
+    chrome.notifications.create("id" + id++, {
+        type: "basic",
+        title: timeStr,
+        message: "Time to add energy cycle.",
+        iconUrl: "icon_128.png"
+    }, creationCallback);
+    //open();
 
 }
 
